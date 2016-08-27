@@ -13,4 +13,8 @@ public interface BeaconService {
 
 	List<Beacon> findAll();
 
+	Beacon findByMac(String mac);
+	
+	void removeBeacon(Long id);
+
 }

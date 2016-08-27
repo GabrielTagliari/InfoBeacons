@@ -28,5 +28,15 @@ public class BeaconServiceImpl implements BeaconService {
 	public List<Beacon> findAll() {
 		return beaconRepository.findAll();
 	}
+
+	@Override
+	public Beacon findByMac(String mac) {
+		return beaconRepository.findByMac(mac);
+	}
+
+	@Override
+	public void removeBeacon(Long id) {
+		beaconRepository.delete(id);		
+	}
 	
 }

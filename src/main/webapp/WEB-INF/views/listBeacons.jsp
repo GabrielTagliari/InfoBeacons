@@ -17,21 +17,26 @@
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
 	
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a href="#" onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a href="#" onclick="document.forms['logoutForm'].submit()">Sair</a></h2> 
+        <h4><a href="${contextPath}/registration">Criar uma conta</a></h4>
 		
     </c:if>
     
-	<h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>
+	
+	
+	<h3>Lista de Beacons</h3>
 	
 	<table>
 		<thead>
-			<td>Nome</td>
-			<td>Uuid</td>
-			<td>Major</td>
-			<td>Minor</td>
-			<td>Mac</td>
-			<td>Text</td>
-			<td>Img</td>
+			<tr>
+				<td>Nome</td>
+				<td>Uuid</td>
+				<td>Major</td>
+				<td>Minor</td>
+				<td>Mac</td>
+				<td>Texto</td>
+				<td>Imagem</td>
+			</tr>
 		</thead>
 		<c:forEach items="${beacon}" var="beacon">
 			<tr>			
@@ -42,6 +47,7 @@
 			<td><c:out value="${beacon.mac}"></c:out></td>
 			<td><c:out value="${beacon.text}"></c:out></td>
 			<td><c:out value="${beacon.img}"></c:out></td>
+			<td><a href="<c:url value='listBeacons/remove/${beacon.id}' />">Excluir</a></td>
 			</tr>
 		</c:forEach>
 	</table>
