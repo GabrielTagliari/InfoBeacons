@@ -1,0 +1,103 @@
+* {
+    outline: none;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.container .content {
+    width: 450px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: -150px;
+    border: 1px solid #eeeeee;
+    box-shadow: 5px 5px 5px #eee;
+}
+
+.container .content .login {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    color: #333366;
+    text-align: center;
+    padding: 10px 0 10px;
+}
+
+.container .content input {
+    padding: 15px;
+    width: 80%;
+    margin-top: 20px;
+    border: none;
+    border-bottom: 1px solid #faaf5f;
+}
+
+.container .content form {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    margin-left: -160.79px;
+}
+
+.container .content label {
+    margin-top: 30px;
+    float: left;
+}
+
+.container .content label a {
+    text-decoration: none;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    color: #333366;
+}
+
+.container .content label > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #333366;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.container .content label > a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.container .content .button {
+    padding: 9px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    background-color: #333366;
+    color: #fff;
+    border: 1px solid #333366;
+    cursor: pointer;
+    float: right;
+    margin-right: 77px;
+}
+
+.container .content .button:hover {
+    background-color: #fff;
+    color: #333366;
+    border: 1px solid #333366;
+    transition: 0.3s ease-in;
+}
