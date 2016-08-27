@@ -5,7 +5,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,12 +32,11 @@
 	<div class="content">
 		<div class="login">InfoBeacons</div>
 	    <form method="POST" action="${contextPath}/login">
-	
-	        <div ${error != null ? 'has-error' : ''}">
-	            <span>${message}</span>
+			<span class="erro">${error}</span>
+	        <div ${error != null ? 'has-error' : ''}>
 	            <input type="text" name="username" placeholder="Usuário" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'">
 	                <input type="password" name="password" placeholder="Senha" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Senha'">
-	            <span>${error}</span>
+	            
 	            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	
 	            <button class="button" type="submit">Entrar</button>

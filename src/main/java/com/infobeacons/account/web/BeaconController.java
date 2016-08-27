@@ -17,6 +17,8 @@ import com.infobeacons.account.service.BeaconService;
 @Controller
 public class BeaconController {
 	
+	private String numero;
+	
 	@Autowired
 	private BeaconService beaconService;
 	
@@ -24,6 +26,7 @@ public class BeaconController {
     public String listBeacons(Model model) {
         List<Beacon> beacon = beaconService.findAll();
         System.out.println(beacon.get(0).toString());
+        model.addAttribute("beacon", beacon);
         return "listBeacons";
     }
 	

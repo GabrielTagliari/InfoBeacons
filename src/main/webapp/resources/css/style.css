@@ -84,7 +84,7 @@
 
 .container .content .button {
     padding: 9px;
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: center;
     font-family: 'Lato', sans-serif;
     background-color: #333366;
@@ -101,4 +101,28 @@
     color: #333366;
     border: 1px solid #333366;
     transition: 0.3s ease-in;
+}
+
+.container .content .erro {
+    color: #e91801;
+    margin-left: 14%;
+}
+
+/* Css da Tabela */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+thead {
+    background-color: #4CAF50;
+    color: white;
 }
