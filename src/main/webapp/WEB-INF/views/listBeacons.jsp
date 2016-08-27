@@ -33,7 +33,8 @@
 			<td>Text</td>
 			<td>Img</td>
 		</thead>
-		<c:forEach items="${beacon}" var="beacon">			
+		<c:forEach items="${beacon}" var="beacon">
+			<tr>			
 			<td><c:out value="${beacon.name}"></c:out></td>
 			<td><c:out value="${beacon.uuid}"></c:out></td>
 			<td><c:out value="${beacon.major}"></c:out></td>
@@ -41,6 +42,7 @@
 			<td><c:out value="${beacon.mac}"></c:out></td>
 			<td><c:out value="${beacon.text}"></c:out></td>
 			<td><c:out value="${beacon.img}"></c:out></td>
+			</tr>
 		</c:forEach>
 	</table>
 	

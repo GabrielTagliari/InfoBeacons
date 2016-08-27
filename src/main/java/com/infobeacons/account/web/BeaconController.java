@@ -22,7 +22,7 @@ public class BeaconController {
 	@Autowired
 	private BeaconService beaconService;
 	
-	@RequestMapping(value = "/listBeacons", method = RequestMethod.GET)
+	@RequestMapping(value = {"/", "/listBeacons"}, method = RequestMethod.GET)
     public String listBeacons(Model model) {
         List<Beacon> beacon = beaconService.findAll();
         System.out.println(beacon.get(0).toString());
