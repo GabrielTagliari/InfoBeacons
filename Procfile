@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.infobeacons
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* infobeacons
