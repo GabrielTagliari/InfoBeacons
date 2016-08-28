@@ -1,12 +1,13 @@
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\model\Role.java
+C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\validator\BeaconValidator.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\repository\RoleRepository.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\service\UserService.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\repository\UserRepository.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\model\Beacon.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\model\User.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\web\UserController.java
-C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\service\BeaconService.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\service\BeaconServiceImpl.java
+C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\service\BeaconService.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\service\UserServiceImpl.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\service\SecurityService.java
 C:\Users\Gabriel\git\InfoBeacons\src\main\java\com\infobeacons\account\repository\BeaconRepository.java

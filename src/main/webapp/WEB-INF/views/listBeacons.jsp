@@ -19,6 +19,8 @@
 	
         <h2>Welcome ${pageContext.request.userPrincipal.name} | <a href="#" onclick="document.forms['logoutForm'].submit()">Sair</a></h2> 
         <h4><a href="${contextPath}/registration">Criar uma conta</a></h4>
+        
+        <h4><a href="${contextPath}/addBeacon">Cadastrar Beacon</a></h4>
 		
     </c:if>
     

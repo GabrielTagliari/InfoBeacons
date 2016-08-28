@@ -17,4 +17,6 @@ public interface BeaconService {
 	
 	void removeBeacon(Long id);
 
+	void save(Beacon beaconForm);
+
 }

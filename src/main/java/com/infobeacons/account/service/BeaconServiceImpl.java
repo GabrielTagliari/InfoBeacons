@@ -38,5 +38,10 @@ public class BeaconServiceImpl implements BeaconService {
 	public void removeBeacon(Long id) {
 		beaconRepository.delete(id);		
 	}
+
+	@Override
+	public void save(Beacon beaconForm) {
+		beaconRepository.save(beaconForm);
+	}
 	
 }
