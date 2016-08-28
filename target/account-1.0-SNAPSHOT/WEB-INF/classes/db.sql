@@ -66,4 +66,5 @@ CREATE TABLE `beacon` (
 -- insert test beacon to database `beacon`
 --
 
-INSERT INTO `beacon` VALUES(1,"teste", "teste", "teste", "teste", "teste", "teste", "teste");
+INSERT INTO `beacon` VALUES(1,"piano", "B9407F30-F5F8-466E-AFF9-25556B57FE6D", "22866", "30552", "E9:F7:CF:EB:35:0D", "O piano de cauda tem a armação e as cordas colocadas horizontalmente. Necessita por isso de um grande espaço pois é bastante volumoso. É adequado para salas de concerto com tetos altos e boa acústica. Existem diversos modelos e tamanhos, entre 1,8 e 3 m de comprimento e 620 kg. 
+ O piano vertical tem a armação e as cordas colocadas verticalmente. A armação pode ser feita em metal ou madeira. Os martelos não beneficiam da força da gravidade.", "piano");

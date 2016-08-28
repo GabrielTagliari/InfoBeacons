@@ -5,7 +5,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,23 +29,22 @@
 <body>
 
 <div class="container">
-
-    <form method="POST" action="${contextPath}/login" class="form-signin">
-        <h2 class="form-heading">Log in</h2>
-
-        <div class="form-group ${error != null ? 'has-error' : ''}">
-            <span>${message}</span>
-            <input type="text" name="username" placeholder="Usuário" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'">
-                <input type="password" name="password" placeholder="Senha" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Senha'">
-            <span>${error}</span>
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
-            <button class="button" type="submit">Log In</button>
-            <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>
-        </div>
-
-    </form>
-
+	<div class="content">
+		<div class="login">InfoBeacons</div>
+	    <form method="POST" action="${contextPath}/login">
+			<span class="erro">${error}</span>
+	        <div ${error != null ? 'has-error' : ''}>
+	            <input type="text" name="username" placeholder="Usuário" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'">
+	                <input type="password" name="password" placeholder="Senha" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Senha'">
+	            
+	            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+	
+	            <button class="button" type="submit">Entrar</button>
+	            <%-- <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4> --%>
+	        </div>
+	
+	    </form>
+	</div>
 </div>
 </body>
 </html>
