@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.infobeacons.account.model.Beacon;
-import com.infobeacons.account.model.User;
 import com.infobeacons.account.service.BeaconService;
 import com.infobeacons.account.validator.BeaconValidator;
 
@@ -69,14 +68,42 @@ public class BeaconController {
 
     @RequestMapping(value = "/addBeacon", method = RequestMethod.POST)
     public String addBeacon(@ModelAttribute("beaconForm") Beacon beaconForm, BindingResult bindingResult, Model model) {
+    	
+    	System.out.println("entrei no post para editar");
+    	
         beaconValidator.validate(beaconForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return "addBeacon";
         }
-
+        
         beaconService.save(beaconForm);
+        
+        return "redirect:/listBeacons";
+    }
+    
+	@RequestMapping("/listBeacons/edit/{id}")
+	public String editBeacon(@PathVariable Long id , Model model) {
+		Beacon beacon = beaconService.findById(id);
+		
+		model.addAttribute("beaconForm", beacon);
+		
+		return "addBeacon";
+	}
+	
+	@RequestMapping(value = "/listBeacons/edit/{id}", method = RequestMethod.POST)
+    public String editBeacon(@ModelAttribute("beaconForm") Beacon beaconForm, BindingResult bindingResult, Model model) {
+    	
+    	System.out.println("entrei no post para editar");
+    	
+        beaconValidator.validate(beaconForm, bindingResult);
 
+        if (bindingResult.hasErrors()) {
+            return "addBeacon";
+        }
+        
+        beaconService.save(beaconForm);
+        
         return "redirect:/listBeacons";
     }
 }

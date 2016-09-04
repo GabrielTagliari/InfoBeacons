@@ -49,6 +49,7 @@
 			<td><c:out value="${beacon.mac}"></c:out></td>
 			<td><c:out value="${beacon.text}"></c:out></td>
 			<td><c:out value="${beacon.img}"></c:out></td>
+			<td><a href="<c:url value='listBeacons/edit/${beacon.id}' />">Editar</a></td>
 			<td><a href="<c:url value='listBeacons/remove/${beacon.id}' />">Excluir</a></td>
 			</tr>
 		</c:forEach>

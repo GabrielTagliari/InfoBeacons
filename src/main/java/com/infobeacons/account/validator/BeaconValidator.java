@@ -33,9 +33,12 @@ public class BeaconValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "minor", "NotEmpty");
         
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "mac", "NotEmpty");
-        if (beaconService.findByMac(beacon.getMac()) != null) {
-            errors.rejectValue("mac", "Duplicate.beaconForm.mac");
-        }
+        
+        if (beacon.getId() == null) {
+        	if (beaconService.findByMac(beacon.getMac()) != null) {
+                errors.rejectValue("mac", "Duplicate.beaconForm.mac");
+            }
+		}        
         
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "text", "NotEmpty");
     }
