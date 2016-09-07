@@ -1,0 +1,8 @@
+applications:
+- path: target/infobeacons-1.0-SNAPSHOT.war
+  memory: 1024M
+  instances: 1
+  domain: mybluemix.net
+  name: InfoBeacons
+  host: infobeacons
+  disk_quota: 1024M
