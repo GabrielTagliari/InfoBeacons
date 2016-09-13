@@ -1,3 +1,5 @@
+com\infobeacons\account\web\FileUploadController.class
+com\infobeacons\account\validator\BeaconValidator.class
 com\infobeacons\account\service\UserDetailsServiceImpl.class
 com\infobeacons\account\model\Beacon.class
 com\infobeacons\account\service\UserServiceImpl.class

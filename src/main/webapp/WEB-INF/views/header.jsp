@@ -17,6 +17,7 @@
 					<li><a href="${contextPath}/listBeacons">Lista de Beacons</a></li>
 					<li><a href="${contextPath}/registration">Criar uma conta</a></li>
 					<li><a href="${contextPath}/addBeacon">Cadastrar Beacon</a></li>
+					<li><a href="${contextPath}/upload">Upload Imagem</a></li>
 				</ul>
 			</div>
 		</nav>

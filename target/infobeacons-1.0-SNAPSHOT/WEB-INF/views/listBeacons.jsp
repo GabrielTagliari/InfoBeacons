@@ -7,26 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Lista de Beacons</title>
 <link href="${contextPath}/resources/css/normalize.css" rel="stylesheet">
-<link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+<link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+<script src="${contextPath}/resources/js/jquery-3.1.0.min.js"></script>
+<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </head>
 <body>
-	
-	<div class="container">
-	<c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form id="logoutForm" method="POST" action="${contextPath}/logout">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        </form>
-	
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a href="#" onclick="document.forms['logoutForm'].submit()">Sair</a></h2> 
-        <h4><a href="${contextPath}/registration">Criar uma conta</a></h4>
-		
-    </c:if>
-    
-	
-	
-	<h3>Lista de Beacons</h3>
-	
-	<table>
+	<%@include file="header.jsp" %>
+	<div class="table-striped">
+	<table class="table">
 		<thead>
 			<tr>
 				<td>Nome</td>
@@ -38,6 +26,7 @@
 				<td>Imagem</td>
 			</tr>
 		</thead>
+		<tbody>
 		<c:forEach items="${beacon}" var="beacon">
 			<tr>			
 			<td><c:out value="${beacon.name}"></c:out></td>
@@ -47,11 +36,12 @@
 			<td><c:out value="${beacon.mac}"></c:out></td>
 			<td><c:out value="${beacon.text}"></c:out></td>
 			<td><c:out value="${beacon.img}"></c:out></td>
+			<td><a href="<c:url value='listBeacons/edit/${beacon.id}' />">Editar</a></td>
 			<td><a href="<c:url value='listBeacons/remove/${beacon.id}' />">Excluir</a></td>
 			</tr>
 		</c:forEach>
+		</tbody>
 	</table>
-	
 	</div>
 </body>
 </html>
