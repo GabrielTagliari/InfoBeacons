@@ -43,8 +43,8 @@ public class FileUploadController {
 				byte[] bytes = file.getBytes();
 
 				// Creating the directory to store file
-				String rootPath = System.getProperty("catalina.home");
-				File dir = new File(rootPath + File.separator + "tmpFiles");
+				String rootPath = System.getProperty("java.vendor");
+				File dir = new File(rootPath + File.separator + "img");
 				if (!dir.exists())
 					dir.mkdirs();
 
