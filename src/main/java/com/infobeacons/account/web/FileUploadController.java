@@ -4,11 +4,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
-import javax.servlet.ServletContext;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,17 +23,11 @@ public class FileUploadController {
 	private static final Logger logger = LoggerFactory
 			.getLogger(FileUploadController.class);
 	
-	@Autowired
-	private ServletContext servletContext;
-	
 	@RequestMapping(value = "/upload", method = RequestMethod.GET)
     public String addBeacon(Model model) {
         return "upload";
     }
 	
-	/**
-	 * Upload single file using Spring Controller
-	 */
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
 	public @ResponseBody
 	String uploadFileHandler(@RequestParam("name") String name,
@@ -46,7 +37,9 @@ public class FileUploadController {
 			try {
 				byte[] bytes = file.getBytes();
 
-				File dir = new File(servletContext.getRealPath("/")+"images");
+				// Creating the directory to store file
+				String rootPath = System.getProperty("catalina.home");
+				File dir = new File(rootPath + File.separator + "tmpFiles");
 				if (!dir.exists())
 					dir.mkdirs();
 
@@ -61,7 +54,7 @@ public class FileUploadController {
 				logger.info("Server File Location="
 						+ serverFile.getAbsolutePath());
 
-				return "You successfully uploaded file=" + name + "No caminho => " + serverFile.getAbsolutePath();
+				return "You successfully uploaded file=" + serverFile.getCanonicalPath();
 			} catch (Exception e) {
 				return "You failed to upload " + name + " => " + e.getMessage();
 			}
