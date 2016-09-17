@@ -4,8 +4,11 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import javax.servlet.ServletContext;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.infobeacons.account.model.Beacon;
 
 /**
  * Handles requests for the application file upload requests
@@ -24,6 +25,9 @@ public class FileUploadController {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(FileUploadController.class);
+	
+	@Autowired
+	private ServletContext servletContext;
 	
 	@RequestMapping(value = "/upload", method = RequestMethod.GET)
     public String addBeacon(Model model) {
@@ -42,9 +46,7 @@ public class FileUploadController {
 			try {
 				byte[] bytes = file.getBytes();
 
-				// Creating the directory to store file
-				String rootPath = System.getProperty("java.vendor");
-				File dir = new File(rootPath + File.separator + "img");
+				File dir = new File(servletContext.getRealPath("/")+"images");
 				if (!dir.exists())
 					dir.mkdirs();
 
