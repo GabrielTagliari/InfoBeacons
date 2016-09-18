@@ -10,7 +10,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<form method="POST" action="uploadFile" enctype="multipart/form-data">
+	<form method="POST" action="uploadFile">
 		
 		File to upload: <input type="file" name="file">
  

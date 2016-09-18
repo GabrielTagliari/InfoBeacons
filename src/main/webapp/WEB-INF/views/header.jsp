@@ -17,7 +17,6 @@
 					<li><a href="${contextPath}/listBeacons">Lista de Beacons</a></li>
 					<li><a href="${contextPath}/registration">Criar uma conta</a></li>
 					<li><a href="${contextPath}/addBeacon">Cadastrar Beacon</a></li>
-					<li><a href="${contextPath}/upload">Upload Imagem</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">				
 					<li><a href="#" onclick="document.forms['logoutForm'].submit()">Sair</a></li>

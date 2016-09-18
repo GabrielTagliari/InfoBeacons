@@ -21,8 +21,8 @@
 <body>
 <%@include file="header.jsp" %>
 
-    <form:form method="POST" modelAttribute="beaconForm">
-        <h2>Cadatrar Beacon</h2>
+    <form:form method="POST" modelAttribute="beaconForm" enctype="multipart/form-data">
+        <h2>${titulo}</h2>
         <spring:bind path="name">
             <div class="form-group" class="${status.error ? 'has-error' : ''}">
                 <form:input type="text" path="name" class="form-control" placeholder="Nome" autofocus="true"></form:input>
@@ -64,15 +64,20 @@
                 <form:errors path="text"></form:errors>
             </div>
         </spring:bind>
+        <c:if test="${isCadastro}">
+	        <div class="form-group">
+				Inserir imagem: <input type="file" name="file">
+			</div>
+        </c:if>
+        
+        <c:if test="${!isCadastro}">
+        	<div class="form-group">
+				Inserir imagem: <input type="file" name="file">
+			</div>
+        	<img src="${imgPath}" width="20%" height="20%"/>
+        </c:if>
 		
-		<spring:bind path="img">
-            <div class="form-group" class="${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="img" class="form-control" placeholder="Caminho da Imagem"></form:input>
-                <form:errors path="img"></form:errors>
-            </div>
-        </spring:bind>        
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">${botao}</button>
     </form:form>
 </body>
 </html>

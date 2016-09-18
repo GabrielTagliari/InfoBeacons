@@ -60,14 +60,14 @@
         
         <spring:bind path="text">
             <div class="form-group" class="${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="text" class="form-control" placeholder="Texto"></form:input>
+                <form:textarea type="text" path="text" class="form-control" placeholder="Texto"></form:textarea>
                 <form:errors path="text"></form:errors>
             </div>
         </spring:bind>
 		
 		<spring:bind path="img">
             <div class="form-group" class="${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="img" class="form-control" placeholder="Caminho da Imagem"></form:input>
+                <form:textarea path="img" class="form-control" placeholder="Caminho da Imagem"></form:textarea>
                 <form:errors path="img"></form:errors>
             </div>
         </spring:bind>        

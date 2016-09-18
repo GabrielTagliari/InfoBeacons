@@ -19,6 +19,9 @@
 					<li><a href="${contextPath}/addBeacon">Cadastrar Beacon</a></li>
 					<li><a href="${contextPath}/upload">Upload Imagem</a></li>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">				
+					<li><a href="#" onclick="document.forms['logoutForm'].submit()">Sair</a></li>
+				</ul>
 			</div>
 		</nav>
 	</c:if>
