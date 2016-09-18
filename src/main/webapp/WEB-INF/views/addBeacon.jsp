@@ -60,7 +60,7 @@
         
         <spring:bind path="text">
             <div class="form-group" class="${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="text" class="form-control" placeholder="Texto"></form:input>
+                <form:textarea type="text" path="text" class="form-control" placeholder="Texto"></form:textarea>
                 <form:errors path="text"></form:errors>
             </div>
         </spring:bind>
