@@ -26,6 +26,7 @@ import com.infobeacons.account.validator.BeaconValidator;
 @Controller
 public class BeaconController {
 	
+	private static final String DATA_IMAGE_JPG_BASE64  = "data:image/jpg;base64,";
 	private static final String TITULO_CADASTRAR = "Cadastrar Beacon";
 	private static final String TITULO_EDITAR = "Editar Beacon";
 	private static final String CADASTRAR = "Cadastrar";
@@ -48,7 +49,6 @@ public class BeaconController {
 	@RequestMapping(value = { "/", "/listBeacons" }, method = RequestMethod.GET)
 	public String listBeacons(Model model) {
 		List<Beacon> beacon = beaconService.findAll();
-		System.out.println(beacon.get(0).toString());
 		model.addAttribute("beacon", beacon);
 		return "listBeacons";
 	}
@@ -57,7 +57,6 @@ public class BeaconController {
 	@RequestMapping(value = "/listBeacons/all", method = RequestMethod.GET)
 	public List<Beacon> getAll(Model model) {
 		List<Beacon> beacon = beaconService.findAll();
-		System.out.println(beacon);
 		return beacon;
 	}
 
@@ -78,14 +77,9 @@ public class BeaconController {
 	
 	@RequestMapping(value = "/addBeacon", method = RequestMethod.GET)
     public String addBeacon(Model model) {
-		isCadastro = Boolean.TRUE;
-		titulo = TITULO_CADASTRAR;
-		botao = CADASTRAR;
-		model.addAttribute("isCadastro", isCadastro);
-		model.addAttribute("titulo", titulo);
-		model.addAttribute("botao", botao);
+		TituloBotaoCadastra(model);
         model.addAttribute("beaconForm", new Beacon());
-
+        
         return "addBeacon";
     }
 
@@ -94,11 +88,10 @@ public class BeaconController {
     		@RequestParam("file") MultipartFile file, BindingResult bindingResult, 
     		Model model) throws IOException {
     	
-    	System.out.println("entrei no post para editar");
-    	
         beaconValidator.validate(beaconForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
+        	TituloBotaoCadastra(model);
             return "addBeacon";
         }
         
@@ -112,17 +105,11 @@ public class BeaconController {
     
 	@RequestMapping("/listBeacons/edit/{id}")
 	public String editBeacon(@PathVariable Long id , Model model) {
-		isCadastro = Boolean.FALSE;
-		titulo = TITULO_EDITAR;
-		botao = EDITAR;
-		
-		model.addAttribute("isCadastro", isCadastro);
-		model.addAttribute("titulo", titulo);
-		model.addAttribute("botao", botao);
+		TituloBotaoEdita(model);
 		Beacon beacon = beaconService.findById(id);
 		
 		model.addAttribute("beaconForm", beacon);
-		String imgPath = "data:image/jpg;base64,"+beacon.getImg();
+		String imgPath = DATA_IMAGE_JPG_BASE64 + beacon.getImg();
 		model.addAttribute("imgPath", imgPath);
 		return "addBeacon";
 	}
@@ -132,11 +119,10 @@ public class BeaconController {
     		@RequestParam("file") MultipartFile file, BindingResult bindingResult, 
     		Model model) throws IOException {
     	
-    	System.out.println("entrei no post para editar");
-    	
         beaconValidator.validate(beaconForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
+        	TituloBotaoEdita(model);
             return "addBeacon";
         }
         
@@ -147,4 +133,23 @@ public class BeaconController {
         
         return "redirect:/listBeacons";
     }
+	
+	private void TituloBotaoCadastra(Model model) {
+		isCadastro = Boolean.TRUE;
+		titulo = TITULO_CADASTRAR;
+		botao = CADASTRAR;
+		model.addAttribute("isCadastro", isCadastro);
+		model.addAttribute("titulo", titulo);
+		model.addAttribute("botao", botao);
+	}
+	
+	private void TituloBotaoEdita(Model model) {
+		isCadastro = Boolean.FALSE;
+		titulo = TITULO_EDITAR;
+		botao = EDITAR;
+		
+		model.addAttribute("isCadastro", isCadastro);
+		model.addAttribute("titulo", titulo);
+		model.addAttribute("botao", botao);
+	}
 }

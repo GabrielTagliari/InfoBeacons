@@ -15,7 +15,8 @@
     <meta name="author" content="">
 
     <title>Log in with your account</title>
-
+	
+	<link href="${contextPath}/resources/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/normalize.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 
@@ -27,24 +28,33 @@
 </head>
 
 <body>
-
 <div class="container">
-	<div class="content">
-		<div class="login">InfoBeacons</div>
-	    <form method="POST" action="${contextPath}/login">
-			<span class="erro">${error}</span>
-	        <div ${error != null ? 'has-error' : ''}>
-	            <input type="text" name="username" placeholder="Usuário" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'">
-	                <input type="password" name="password" placeholder="Senha" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Senha'">
-	            
-	            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-	
-	            <button class="button" type="submit">Entrar</button>
-	            <%-- <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4> --%>
-	        </div>
-	
-	    </form>
-	</div>
-</div>
+        <div class="row">
+            <div class="login">
+                <div class="Absolute-Center is-Responsive">
+                    <div id="text-container">InfoBeacons</div>
+                    <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    	<form method="POST" action="${contextPath}/login" id="loginForm">
+                    		<span class="erro">${error}</span>
+		                    <div class="form-group input-group">
+		                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+		                        <input class="form-control" type="text" name='username' placeholder="Usuário" />
+		                    </div>
+		                    <div class="form-group input-group">
+		                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+		                        <input class="form-control" type="password" name='password' placeholder="Senha" />
+		                    </div>
+		                    
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+							
+		                    <div class="form-group">
+		                        <button type="submit" class="btn btn-def btn-block">Acessar</button>
+		                    </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
