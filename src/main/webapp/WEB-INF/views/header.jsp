@@ -14,7 +14,6 @@
 	                <div class="navbar-header">
 	                    <a class="navbar-brand" href="${contextPath}/listBeacons">InfoBeacons</a>
 	                </div>
-	                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	                    <ul class="nav navbar-nav navbar-right">
 	                        <li><a href="#">Bem-vindo, ${pageContext.request.userPrincipal.name}</a></li>
 	                        <li><a href="${contextPath}/listBeacons">Lista de Beacons</a></li>
@@ -22,7 +21,6 @@
 	                        <li><a href="${contextPath}/addBeacon">Cadastrar Beacon</a></li>
 	                        <li><a href="#" onclick="document.forms['logoutForm'].submit()" class="sair">Sair</a></li>
 	                    </ul>
-	                </div>
 	            </div>
 	        </div>
 	    </nav>
