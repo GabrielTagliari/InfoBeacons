@@ -5,7 +5,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Cadastrar beacon</title>
     <meta charset="utf-8">
@@ -19,8 +19,8 @@
 </head>
 
 <body>
-<%@include file="header.jsp" %>
 
+	<%@include file="header.jsp" %>
 
 	<div class="container">
         <div class="row">
@@ -74,6 +74,10 @@
 	                            <div class="form-group textarea-group ${status.error ? 'has-error' : ''}">
 	                                <form:textarea class="form-control" rows="10" path="text" id="comment" name='' placeholder="Descrição" ></form:textarea>
 	                            </div>
+                            </spring:bind>
+                            
+                            <spring:bind path="img">
+                            	<form:input hidden="true" type="text" path="img"></form:input>
                             </spring:bind>
                             
                             <c:if test="${isCadastro}">

@@ -5,7 +5,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Criar uma conta</title>
     <meta charset="utf-8">
@@ -19,7 +19,8 @@
 </head>
 
 <body>
-<%@include file="header.jsp" %>
+
+	<%@include file="header.jsp" %>
 	
 	<div class="container">
         <div class="row">
@@ -58,8 +59,5 @@
             </div>
         </div>
     </div>
-<!-- /container -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

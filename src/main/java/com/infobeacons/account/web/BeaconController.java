@@ -31,6 +31,7 @@ public class BeaconController {
 	private static final String TITULO_EDITAR = "Editar Beacon";
 	private static final String CADASTRAR = "Cadastrar";
 	private static final String EDITAR = "Editar";
+	private static final String VAZIO = "";
 	
 	private String titulo;
 	private String botao;
@@ -118,6 +119,8 @@ public class BeaconController {
     public String editBeacon(@ModelAttribute("beaconForm") Beacon beaconForm, 
     		@RequestParam("file") MultipartFile file, BindingResult bindingResult, 
     		Model model) throws IOException {
+		
+		System.out.println("Arquivo:" + file.toString());
     	
         beaconValidator.validate(beaconForm, bindingResult);
 
@@ -126,9 +129,11 @@ public class BeaconController {
             return "addBeacon";
         }
         
-        String img = fileUploadController.uploadFile(file);
-        beaconForm.setImg(img);
-        
+        if (!file.isEmpty()) {
+        	String img = fileUploadController.uploadFile(file);
+    	    beaconForm.setImg(img);
+		}
+    	        
         beaconService.save(beaconForm);
         
         return "redirect:/listBeacons";

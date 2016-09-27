@@ -4,17 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Lista de Beacons</title>
-<link href="${contextPath}/resources/css/normalize.css" rel="stylesheet">
-<link href="${contextPath}/resources/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="${contextPath}/resources/js/jquery-3.1.0.min.js"></script>
-<script src="${contextPath}/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<title>Lista de Beacons</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link href="${contextPath}/resources/css/normalize.css" rel="stylesheet">
+	<link href="${contextPath}/resources/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="${contextPath}/resources/js/jquery-3.1.0.min.js"></script>
+	<link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+	<script src="${contextPath}/resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 	<%@include file="header.jsp" %>
 	
-	<div class="table-striped">
+	<div class="table-responsive">
         <div class="container">
             <table class="table">
                 <thead>
