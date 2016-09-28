@@ -72,7 +72,7 @@
                             <spring:bind path="text">
                             <form:errors path="text"></form:errors>
 	                            <div class="form-group textarea-group ${status.error ? 'has-error' : ''}">
-	                                <form:textarea class="form-control" rows="10" path="text" id="comment" name='' placeholder="DescriÃ§Ã£o" required="true"></form:textarea>
+	                                <form:textarea class="form-control" rows="10" path="text" id="comment" name='' placeholder="Descrição" required="true"></form:textarea>
 	                            </div>
                             </spring:bind>
                             
