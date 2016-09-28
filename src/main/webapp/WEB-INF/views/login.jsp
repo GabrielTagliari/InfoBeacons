@@ -38,11 +38,11 @@
                     		<span class="erro">${error}</span>
 		                    <div class="form-group input-group">
 		                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		                        <input class="form-control" type="text" name='username' placeholder="Usuário" />
+		                        <input class="form-control" type="text" name='username' placeholder="UsuÃ¡rio" required="true"/>
 		                    </div>
 		                    <div class="form-group input-group">
 		                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-		                        <input class="form-control" type="password" name='password' placeholder="Senha" />
+		                        <input class="form-control" type="password" name='password' placeholder="Senha" required="true"/>
 		                    </div>
 		                    
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
