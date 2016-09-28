@@ -124,3 +124,13 @@ textarea {
 .navbar-default .navbar-toggle:hover {
     background-color: #f5f5f5;
 }
+
+.active {
+    font-size: 15px !important;
+    font-weight: bolder !important;
+    color: #2a363b !important;
+}
+
+.navbar-header .active:hover {
+    text-decoration: none !important;
+}
