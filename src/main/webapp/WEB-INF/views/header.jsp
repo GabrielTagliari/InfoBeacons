@@ -19,10 +19,10 @@
 	                        <span class="icon-bar"></span>
 	                    </button>
 	                    <a class="navbar-brand" href="#">InfoBeacons</a>
+			    <a class="navbar-brand active">Bem Vindo, ${pageContext.request.userPrincipal.name}</a>
 	                </div>
 	                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	                    <ul class="nav navbar-nav navbar-right">
-	                        <li><a href="#">Bem-vindo, ${pageContext.request.userPrincipal.name}</a></li>
 	                        <li><a href="${contextPath}/listBeacons">Lista de Beacons</a></li>
 	                        <li><a href="${contextPath}/registration">Criar uma Conta</a></li>
 	                        <li><a href="${contextPath}/addBeacon">Cadastrar Beacon</a></li>
