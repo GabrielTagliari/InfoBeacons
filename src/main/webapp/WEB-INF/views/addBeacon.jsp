@@ -33,7 +33,7 @@
                         	<form:errors path="name"></form:errors>
 	                            <div class="form-group input-group ${status.error ? 'has-error' : ''}">
 	                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-	                                <form:input class="form-control" type="text" path="name" name='username' placeholder="Nome"></form:input>
+	                                <form:input class="form-control" type="text" path="name" name='username' placeholder="Nome" required="true"></form:input>
 	                            </div>
                             </spring:bind>
                             
@@ -41,7 +41,7 @@
                             <form:errors path="uuid"></form:errors>
 	                            <div class="form-group input-group ${status.error ? 'has-error' : ''}">
 	                                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-	                                <form:input class="form-control" type="text" path="uuid" name='password' placeholder="UUID"></form:input>
+	                                <form:input class="form-control" type="text" path="uuid" name='password' placeholder="UUID" required="true"></form:input>
 	                            </div>
                             </spring:bind>
                             
@@ -49,7 +49,7 @@
                             <form:errors path="major"></form:errors>
 	                            <div class="form-group input-group ${status.error ? 'has-error' : ''}">
 	                                <span class="input-group-addon"><i class="glyphicon glyphicon-collapse-up"></i></span>
-	                                <form:input class="form-control" type="number" path="major" name='password' placeholder="Major"></form:input>
+	                                <form:input class="form-control" type="number" path="major" name='password' placeholder="Major" required="true"></form:input>
 	                            </div>
                             </spring:bind>
                             
@@ -57,7 +57,7 @@
                             <form:errors path="minor"></form:errors>
 	                            <div class="form-group input-group ${status.error ? 'has-error' : ''}">
 	                                <span class="input-group-addon"><i class="glyphicon glyphicon-collapse-down"></i></span>
-	                                <form:input class="form-control" type="number" path="minor" name='password' placeholder="Minor"></form:input>
+	                                <form:input class="form-control" type="number" path="minor" name='password' placeholder="Minor" required="true"></form:input>
 	                            </div>
                             </spring:bind>
                             
@@ -65,14 +65,14 @@
                             <form:errors path="mac"></form:errors>
 	                            <div class="form-group input-group ${status.error ? 'has-error' : ''}">
 	                                <span class="input-group-addon"><i class="glyphicon glyphicon-modal-window"></i></span>
-	                                <form:input class="form-control" type="text" path="mac" name='password' placeholder="MAC"></form:input>
+	                                <form:input class="form-control" type="text" path="mac" name='password' placeholder="MAC" required="true"></form:input>
 	                            </div>
                             </spring:bind>
                             
                             <spring:bind path="text">
                             <form:errors path="text"></form:errors>
 	                            <div class="form-group textarea-group ${status.error ? 'has-error' : ''}">
-	                                <form:textarea class="form-control" rows="10" path="text" id="comment" name='' placeholder="Descrição" ></form:textarea>
+	                                <form:textarea class="form-control" rows="10" path="text" id="comment" name='' placeholder="DescriÃ§Ã£o" required="true"></form:textarea>
 	                            </div>
                             </spring:bind>
                             
