@@ -32,7 +32,7 @@
         <div class="row">
             <div class="login">
                 <div class="Absolute-Center is-Responsive">
-                    <div id="text-container">InfoBeacons</div>
+                    <div id="logo-container"></div>
                     <div class="col-sm-12 col-md-10 col-md-offset-1">
                     	<form method="POST" action="${contextPath}/login" id="loginForm">
                     		<span class="erro">${error}</span>
