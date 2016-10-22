@@ -21,7 +21,7 @@ div.well {
 .Absolute-Center.is-Responsive {
     width: 100%;
     height: 50%;
-    position: absolute;
+    position: relative;
     min-width: 200px;
     max-width: 650px;
     padding: 40px;
