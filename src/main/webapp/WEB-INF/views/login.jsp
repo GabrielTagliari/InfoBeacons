@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Log in with your account</title>
+    <title>InfoBeacons</title>
 	
 	<link href="${contextPath}/resources/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/normalize.css" rel="stylesheet">

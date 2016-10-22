@@ -46,12 +46,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(Model model, String error, String logout) {
+    public String login(Model model, String error) {
         if (error != null)
             model.addAttribute("error", "Usuário e/ou senha inválido(s)");
-
-        if (logout != null)
-            model.addAttribute("message", "You have been logged out successfully.");
 
         return "login";
     }
