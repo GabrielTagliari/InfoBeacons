@@ -36,6 +36,10 @@ div.well {
     padding: 40px;
 }
 
+.login .Absolute-Center.is-Responsive{
+	position: absolute;
+}
+
 #logo-container {
     margin: auto;
     margin-bottom: 10px;
